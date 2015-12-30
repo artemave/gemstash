@@ -18,13 +18,13 @@ before_install: gem install bundler -v 1.11.2
 cache: bundler
 script:
 - bundle exec rake spec
-deploy:
+after_success:
   provider: script
   script: docker/build_and_push.sh
   on:
     branch:
-      - docker
       - master
+      - docker
       - 1-0-stable
 notifications:
   slack:
