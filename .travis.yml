@@ -23,6 +23,7 @@ deploy:
   script: docker/build_and_push.sh
   on:
     branch:
+      - docker
       - master
       - 1-0-stable
 notifications:
